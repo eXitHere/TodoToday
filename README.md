@@ -4,24 +4,26 @@
 
 -   [ ] ระบบจะ reset ทุก ๆ วัน
 
+### please make sure you have installed yarn on your computer
+
 ## How to
 
 #### install
 
 ```
-  npm install
+  yarn install
 ```
 
 #### run
 
 ```
-  npm start
+  yarn start
 ```
 
 #### build
 
 ```
-  npm run build
+  yarn run build
 ```
 
 #### after that
