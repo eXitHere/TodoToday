@@ -16,7 +16,9 @@ function createWindow() {
     if(!isDev) {
         mainWindow.setMenu(null);
     }
-    mainWindow.setResizable(false);
+    else {
+        mainWindow.setResizable(false);
+    }
 }
 app.on('ready', createWindow);
 app.on('activate', () => {
