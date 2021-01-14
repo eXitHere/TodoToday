@@ -30,7 +30,7 @@
     "release": "yarn react-build && electron-builder --publish=always",
     "build": "yarn react-build && yarn electron-build",
     "start": "concurrently \"cross-env BROWSER=none yarn react-start\" \"wait-on http://localhost:3000 && electron .\"",
-    "start-wsl": "concurrently \"cross-env BROWSER=none yarn react-start\" \"wait-on http://localhost:3000 && ./node_modules/.bin/electron .\""
+    "start-wsl": "concurrently \"cross-env BROWSER=none yarn react-start\" \"wait-on http://localhost:3000 && ./node_modules/electron/dist/electron.exe .\""
   },
   "eslintConfig": {
     "extends": [

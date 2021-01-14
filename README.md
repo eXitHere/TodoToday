@@ -31,3 +31,16 @@
 ```
 file will created in \dist\
 ```
+
+#### note
+
+How to run electron in wsl
+
+1. [in wsl]: npm uninstall --save-dev electron
+2. [in cmd]: npm install --save-dev electron
+3. [in wsl]: call ./node_modules/electron/dist/electron.exe to execute
+
+path of wsl (share folder)
+
+1. use (in cmd) pushd \\wsl$\Ubuntu-20.04\home\ <= same cd
+2. copy folder project to linux (if you want to use auto reload...)
