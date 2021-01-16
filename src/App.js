@@ -3,16 +3,24 @@ import Header from './Components/Header';
 import Todo from './Components/Todo';
 import ErrorBoundary from './ErrorBoundary.js';
 import react from 'react';
+
+import {init} from './Database/DatabaseController';
 class mainApp extends react.Component {
   
   constructor(props) {
     super(props);
     this.state = {
-      isToday: true
+      isToday: true,
+      setupComplete: false
     };
   }
 
-
+  componentDidMount() {
+    init()
+      .then(() => {
+        this.setState({setupComplete: true});
+      })
+  }
   
   render() {
 
@@ -23,10 +31,13 @@ class mainApp extends react.Component {
     
     return (
       <ErrorBoundary>
-        <div className="App">
-          <Todo isToday={this.state.isToday} /> 
-          <Header isToday={this.state.isToday} callback={middle.bind(this)} />
-        </div>
+        {
+          this.state.setupComplete &&
+          <div className="App">
+            <Todo isToday={this.state.isToday} /> 
+            <Header isToday={this.state.isToday} callback={middle.bind(this)} />
+          </div>
+        }
       </ErrorBoundary>
     );
   }
